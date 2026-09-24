@@ -19,7 +19,6 @@
             position: relative;
             padding: 20px 0;
         }
-        /* Yurakchalar yanada yorqinroq qilindi */
         .hearts-container {
             position: absolute;
             top: 0;
@@ -33,7 +32,7 @@
         .heart {
             position: absolute;
             bottom: -50px;
-            color: rgba(244, 63, 94, 0.85); /* Yorqinroq rang */
+            color: rgba(244, 63, 94, 0.85);
             font-size: 20px;
             animation: floatUp 6s linear infinite;
         }
@@ -78,7 +77,6 @@
             margin: 15px 0;
             line-height: 1.5;
         }
-        /* Tugmalar boshida yonma-yon turishi uchun */
         .buttons {
             display: flex;
             justify-content: center;
@@ -111,7 +109,6 @@
         }
         .hidden { display: none; }
         
-        /* "Ha" dan keyingi jilolanuvchi yorqin matnlar */
         .greeting-success {
             font-size: 28px;
             font-weight: 800;
@@ -145,10 +142,17 @@
             margin: 10px auto;
             display: block;
         }
+        .audio-container {
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 30px;
+            display: inline-block;
+        }
         audio {
-            margin-top: 15px;
             width: 100%;
             max-width: 280px;
+            display: block;
         }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
     </style>
@@ -165,7 +169,7 @@
             <b>Menga turmushga chiqishga rozimisiz?</b>
         </div>
         <div class="highlight-box">
-            Kibr qilmay "Ha"ni bosing chiroyligim 🫳, yo‘q tugmasini bosa olmaysiz, chunki meni yaxxi ko‘rasiz!
+            Kibr qilmay "Ha"ni bosing chiroyligim 🫳, yo‘q tugmasini bosa olmaysiz, chunki meni yaxshi ko‘rasiz!
         </div>
         <div class="buttons">
             <button class="btn-yes" onclick="showGreeting()">Ha</button>
@@ -173,7 +177,7 @@
         </div>
     </div>
 
-    <!-- Ikkinchi oyna (Bo'shliqlar olib tashlandi, ixcham qilindi) -->
+    <!-- Ikkinchi oyna -->
     <div class="box hidden" id="greeting-box">
         <div class="greeting-success">❤️ Rozi bo‘lishingizni bilardim! ❤️</div>
         
@@ -187,7 +191,10 @@
         
         <div class="love-text">❤️ Sizni, sizni yaxshi ko‘raman! ❤️</div>
 
-        <audio id="bg-music" src="musiqa.mp3" controls loop></audio>
+        <!-- Musiqa nomi to'g'rilandi: src="music.mp3" -->
+        <div class="audio-container">
+            <audio id="bg-music" src="music.mp3" controls loop></audio>
+        </div>
     </div>
 
     <script>
@@ -208,7 +215,6 @@
 
         function moveButton() {
             const noBtn = document.getElementById('no-button');
-            // Yaqinlashganda absolute holatga o'tib qochadi
             noBtn.style.position = 'absolute';
             const x = Math.random() * (window.innerWidth - 140) - (window.innerWidth / 2) + 70;
             const y = Math.random() * (window.innerHeight - 90) - (window.innerHeight / 2) + 45;
@@ -219,8 +225,19 @@
             document.getElementById('question-box').classList.add('hidden');
             document.getElementById('greeting-box').classList.remove('hidden');
             window.scrollTo(0,0);
+            
             const music = document.getElementById('bg-music');
-            music.play().catch(e => console.log(e));
+            if (music) {
+                music.muted = false;
+                var playPromise = music.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(_ => {
+                        console.log("Musiqa muvaffaqiyatli chalindi!");
+                    }).catch(error => {
+                        console.log("Pleyerdan pley bosing:", error);
+                    });
+                }
+            }
         }
     </script>
 
