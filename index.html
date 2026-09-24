@@ -14,7 +14,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow: hidden;
+            overflow-x: hidden;
             text-align: center;
         }
 
@@ -31,10 +31,37 @@
 
         h1 {
             color: #ff4b6e;
-            font-size: 19px;
+            font-size: 22px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .main-p {
+            font-size: 16px;
+            color: #333;
             line-height: 1.6;
             margin-bottom: 20px;
-            font-weight: 600;
+        }
+
+        .question-p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff4b6e;
+            margin: 20px 0;
+        }
+
+        /* Sariq ogohlantirish oynasi */
+        .yellow-box {
+            border: 2px dashed #ffb703;
+            background-color: rgba(255, 183, 3, 0.1);
+            border-radius: 12px;
+            padding: 15px;
+            color: #d48b00;
+            font-size: 15px;
+            line-height: 1.5;
+            font-weight: bold;
+            margin-bottom: 20px;
         }
 
         .btn-group {
@@ -48,27 +75,30 @@
         }
 
         .btn {
-            background-color: #ff4b6e;
             color: white;
             border: none;
-            padding: 10px 30px;
-            font-size: 17px;
+            padding: 12px 35px;
+            font-size: 18px;
             border-radius: 25px;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255, 75, 110, 0.3);
             font-weight: bold;
             transition: background-color 0.2s, transform 0.1s;
             z-index: 15;
         }
 
-        .btn:hover {
-            background-color: #ff2a53;
+        #yesBtn {
+            background-color: #2ec4b6;
+            box-shadow: 0 5px 15px rgba(46, 196, 182, 0.3);
+        }
+
+        #yesBtn:hover {
+            background-color: #21a195;
             transform: scale(1.05);
         }
 
         #noBtn {
-            background-color: #999;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: #e63946;
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
             position: relative;
         }
 
@@ -90,11 +120,18 @@
             box-shadow: 0 5px 15px rgba(255, 75, 110, 0.2);
         }
 
+        .big-heading {
+            font-size: 24px;
+            color: #ff4b6e;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
         .signature {
             font-weight: bold;
             color: #ff4b6e;
-            font-size: 18px;
-            margin-top: 15px;
+            font-size: 20px;
+            margin-top: 20px;
             display: block;
         }
 
@@ -125,20 +162,36 @@
     </audio>
 
     <div class="container">
-        <!-- Birinchi bo'lim: Faqat matni almashtirildi -->
+        <!-- 1-RASMDAGI TO'LIQ GAPLAR -->
         <div id="startSection">
-            <h1>Assalom alaykum mening qadrli sadoqatli latofatli go‘zal yorim Mohlaroyim sizni bugungi quvonchli kun tavallud ayyomingiz bilan tabriklayman bahtmizga sog‘ bo‘ling har doim yonimda bo‘lishga, meni butun umir sevishga, menga turmishga chiqishga rozmsiz...??</h1>
+            <h1>Assalomu alaykum va rahmatulloh</h1>
+            <p class="main-p">Mening quyoshim bugungi shukrona kuningiz muborak bo‘lsin! Alloh umringizni ziyoda, hayotingizni osuda, qalbingizni xotirjam qilsin, oila a'zolaringizni salomat qilsin. Bugun sizga sovg‘alar berolmasam-da, shu tilaklarimni noyabr oyigacha qabul qilib turgaysiz.</p>
+            
+            <p class="question-p">Menga turmushga chiqishga rozimisiz?</p>
+            
+            <div class="yellow-box">
+                Kibr qilmay "Ha"ni bosing chiroyligim 👈, yo‘q tugmasini bosa olmaysiz, chunki meni yaxshi ko‘rasiz!
+            </div>
+
             <div class="btn-group">
                 <button class="btn" id="yesBtn" onclick="startSurprise()">Ha</button>
                 <button class="btn" id="noBtn" onmouseover="moveNoButton()" onclick="moveNoButton()">Yo‘q</button>
             </div>
         </div>
 
-        <!-- Ikkinchi bo'lim: Rasm joyida qoldi, Germaniya haqidagi matn yangisiga almashtirildi -->
+        <!-- 2-RASMDAGI TO'LIQ GAPLAR (Yangi kichik rasm bilan) -->
         <div id="secretContent" class="content">
+            <div class="big-heading">❤️ Rozi bo‘lishingizni bilardim! ❤️</div>
+            
+            <!-- Siz yuklagan rasm shu yerda chiqadi -->
             <img src="photo.jpg" alt="Mohlaroyim" class="media-element">
-            <p>Eng baxtli inson men man hozir Judayam hursadman sizni menga yetkazgan alloh ga shukur alloh ziyoda qilsin umrizni quvonchli kunizda yonizda bo‘la olmadim lekin noyabir oyida oldizda bo‘laman sovg‘ani kottasni o‘shanda olasiz chiroyligim arzimasada tilaklarmni qabul qilasiz</p>
-            <span class="signature">Sizni yaxshi ko‘raman ❤🫂<br>Yoringizdan</span>
+
+            <p>Sizni dunyolarga alishmaydigan, umrning oxirigacha sevadigan insoningiz bor. Alloh ikki dunyoda bizni ayrmasin. Doimo duolar qiling, axir sizning duoingiz o‘tadi-ku.</p>
+            <p>O‘qishlaringizda yuksak ma'naviyat egasi bo‘ling, o‘zingiz xohlagandek yetuk shifokor bo‘lib yetishing. Germaniyaga borish nasib qilsin, eng zo‘r shifokor bo‘ling. Shuncha payt ko‘rishmadik, endi nasib qilsa ko‘risharmiz.</p>
+            
+            <p style="font-weight: bold; color: #ffb703; margin-top: 15px;">Noyabr oyida kutaman...</p>
+            
+            <span class="signature">❤️ Sizni, sizni yaxshi ko‘raman! ❤️</span>
         </div>
     </div>
 
