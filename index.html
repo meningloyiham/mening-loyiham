@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mening yangi sahifam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .box {
+            background-color: #1e293b;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 25px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-yes { background-color: #22c55e; color: white; }
+        .btn-no { background-color: #ef4444; color: white; }
+        button:hover { opacity: 0.8; }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Sahifaga kirishni xohlaysizmi?</h2>
+        <div class="buttons">
+            <button class="btn-yes" onclick="alert('Xush kelibsiz!')">Ha</button>
+            <button class="btn-no" onclick="alert('Siz yo‘q deb javob berdingiz')">Yo‘q</button>
+        </div>
+    </div>
+
+</body>
+</html>
 
